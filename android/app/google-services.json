@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "312676953000",
+    "project_id": "focustube-393918",
+    "storage_bucket": "focustube-393918.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:312676953000:android:7b38db7ffc112707750b9d",
+        "android_client_info": {
+          "package_name": "com.example.focustube"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "312676953000-897ulisaot64bcpi50jt9ohm7vbd22h5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCyQwduJ7lVElCfsKhTe-bwNIAw2lYvBQE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "312676953000-897ulisaot64bcpi50jt9ohm7vbd22h5.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "312676953000-9o41mttpq7tmn8fssofceu479jddp26f.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.youtubeFocus.RunnerTests"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
