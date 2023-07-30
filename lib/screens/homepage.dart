@@ -1,6 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:focustube/screens/acccounts_page.dart';
 import 'package:focustube/screens/home_screen.dart';
+import 'package:focustube/screens/library_page.dart';
+import 'package:focustube/screens/subscription_page.dart';
 
 import '../auth/auth_services.dart';
 
@@ -10,8 +13,11 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  List<Widget> pages = [SubscriptionPage(), LibraryPage(), AccountsPage()];
+
   String? user = FirebaseAuth.instance.currentUser!.email ??
       FirebaseAuth.instance.currentUser!.displayName;
+  int currentIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -20,25 +26,39 @@ class _HomePageState extends State<HomePage> {
         title: Text(
             "${FirebaseAuth.instance.currentUser!.displayName!} ${FirebaseAuth.instance.currentUser!.email!}"),
       ),
-      bottomNavigationBar: BottomNavigationBar(currentIndex: 0, items: [
-        BottomNavigationBarItem(
-          label: "home",
-          tooltip: "1",
-          icon: Icon(Icons.home),
-        ),
-        BottomNavigationBarItem(
-          label: "subscription",
-          tooltip: "1",
-          icon: Icon(Icons.subscriptions),
-        )
-      ]),
+      bottomNavigationBar: BottomNavigationBar(
+          onTap: (index) {
+            setState(() {
+              currentIndex = index;
+            });
+          },
+          currentIndex: currentIndex,
+          items: [
+            BottomNavigationBarItem(
+              label: "subscription",
+              tooltip: "1",
+              icon: Icon(Icons.subscriptions),
+            ),
+            BottomNavigationBarItem(
+              label: "home",
+              tooltip: "1",
+              icon: Icon(
+                Icons.video_library,
+              ),
+            ),
+            BottomNavigationBarItem(
+              label: "Account",
+              tooltip: "1",
+              icon: Icon(Icons.account_circle),
+            )
+          ]),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           AuthService().signOut();
         },
       ),
       body: Container(
-        child: HomeScreen(),
+        child: pages[currentIndex],
       ),
     );
   }

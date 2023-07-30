@@ -82,11 +82,11 @@ class APIService {
     }
   }
 
-  Future<Map<String, dynamic>> fetchSubsiptions() async {
-    Map<String, dynamic> parameters = {
-      'part': 'snippet, contentDetails, statistics, id',
+  Future fetchSubsiptions(String channelid) async {
+    var parameters = {
+      "part": "contentDetails,id, snippet,subscriberSnippet",
+      "channelId": channelid,
       'key': API_KEY,
-      'mySubscribers': true
     };
 
     Uri uri = Uri.https(
@@ -99,14 +99,14 @@ class APIService {
     };
     var response = await http.get(uri, headers: headers);
     if (response.statusCode == 200) {
-      Map<String, dynamic> data = json.decode(response.body);
+      var data = json.decode(response.body);
       //List<Channel> channels = List.fromMap(data);
 
       // Fetch first batch of videos from uploads playlist
       //channels.title = await fetchVideosFromPlaylist(
       //  playlistId: channel.uploadPlaylistId,
       //);
-      return data;
+      return response.body;
     } else {
       throw json.decode(response.body)['error']['message'];
     }
