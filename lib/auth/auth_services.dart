@@ -13,7 +13,7 @@ class AuthService {
         builder: (BuildContext context, snapshot) {
           if (snapshot.hasData) {
             print("home page");
-            return HomePage();
+            return const HomePage();
           } else {
             print("login page");
             return const LoginPage();

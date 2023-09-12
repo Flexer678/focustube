@@ -6,8 +6,8 @@ class WelcomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: SafeArea(
-          child: Container(
+      child: const SafeArea(
+          child: SizedBox(
         width: double.infinity,
         height: double.infinity,
         child: Column(children: [

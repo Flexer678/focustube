@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:focustube/data/services.dart';
-import 'package:focustube/screens/login_page.dart';
 import 'package:firebase_core/firebase_core.dart';
 import '../auth/auth_services.dart';
 

@@ -1,19 +1,20 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:focustube/screens/acccounts_page.dart';
-import 'package:focustube/screens/home_screen.dart';
 import 'package:focustube/screens/library_page.dart';
 import 'package:focustube/screens/subscription_page.dart';
 
 import '../auth/auth_services.dart';
 
 class HomePage extends StatefulWidget {
+  const HomePage({super.key});
+
   @override
   _HomePageState createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
-  List<Widget> pages = [SubscriptionPage(), LibraryPage(), AccountsPage()];
+  List<Widget> pages = [const SubscriptionPage(), const LibraryPage(), const AccountsPage()];
 
   String? user = FirebaseAuth.instance.currentUser!.email ??
       FirebaseAuth.instance.currentUser!.displayName;
@@ -33,7 +34,7 @@ class _HomePageState extends State<HomePage> {
             });
           },
           currentIndex: currentIndex,
-          items: [
+          items: const [
             BottomNavigationBarItem(
               label: "subscription",
               tooltip: "1",

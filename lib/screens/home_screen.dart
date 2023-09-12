@@ -5,6 +5,8 @@ import '../screens/video_screen.dart';
 import '../data/services.dart';
 
 class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
+
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
@@ -29,10 +31,10 @@ class _HomeScreenState extends State<HomeScreen> {
 
   _buildProfileInfo() {
     return Container(
-      margin: EdgeInsets.all(20.0),
-      padding: EdgeInsets.all(20.0),
+      margin: const EdgeInsets.all(20.0),
+      padding: const EdgeInsets.all(20.0),
       height: 100.0,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         boxShadow: [
           BoxShadow(
             color: Colors.black12,
@@ -47,7 +49,7 @@ class _HomeScreenState extends State<HomeScreen> {
             radius: 35.0,
             backgroundImage: NetworkImage(_channel!.profilePictureUrl),
           ),
-          SizedBox(width: 12.0),
+          const SizedBox(width: 12.0),
           Expanded(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -55,7 +57,7 @@ class _HomeScreenState extends State<HomeScreen> {
               children: <Widget>[
                 Text(
                   _channel!.title,
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: Colors.black,
                     fontSize: 20.0,
                     fontWeight: FontWeight.w600,
@@ -88,10 +90,10 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
       child: Container(
-        margin: EdgeInsets.symmetric(horizontal: 20.0, vertical: 5.0),
-        padding: EdgeInsets.all(10.0),
+        margin: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 5.0),
+        padding: const EdgeInsets.all(10.0),
         height: 140.0,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           boxShadow: [
             BoxShadow(
               color: Colors.black12,
@@ -106,11 +108,11 @@ class _HomeScreenState extends State<HomeScreen> {
               width: 150.0,
               image: NetworkImage(video.thumbnailUrl),
             ),
-            SizedBox(width: 10.0),
+            const SizedBox(width: 10.0),
             Expanded(
               child: Text(
                 video.title,
-                style: TextStyle(
+                style: const TextStyle(
                   color: Colors.black,
                   fontSize: 18.0,
                 ),
@@ -137,7 +139,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('YouTube Channel'),
+        title: const Text('YouTube Channel'),
       ),
       body: _channel != null
           ? NotificationListener<ScrollNotification>(

@@ -5,6 +5,6 @@ class AccountsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(child: Text("account Page"));
+    return Container(child: const Text("account Page"));
   }
 }

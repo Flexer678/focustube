@@ -7,7 +7,7 @@ class SubscriptionPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      minimum: EdgeInsets.all(10),
+      minimum: const EdgeInsets.all(10),
       child: Column(
         children: [
           Row(
@@ -16,7 +16,7 @@ class SubscriptionPage extends StatelessWidget {
                   "${(APIService.instance.fetchSubsiptions("UC6VIAsS72ayh7qVevZZSEbw"))}")
             ],
           ),
-          Column()
+          const Column()
         ],
       ),
     );
